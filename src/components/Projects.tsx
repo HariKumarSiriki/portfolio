@@ -10,7 +10,7 @@ const Projects = () => {
         'A job portal system developed using Spring Boot for backend and Angular for frontend. Features include job posting, applicant tracking, and advanced search functionalities.',
       technologies: ['Spring Boot', 'Angular', 'MySQL', 'REST API'],
       image:
-        'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800',
+        'https://images.pexels.com/photos/7112/startup-photos.jpg?auto=compress&cs=tinysrgb&w=800',
       github: '#',
       live: '#',
       featured: true,
@@ -22,7 +22,7 @@ const Projects = () => {
         'A complete travel booking and management platform. It handles customer details, travel packages, payment integration, and booking records efficiently.',
       technologies: ['Java', 'Spring Boot', 'MySQL', 'HTML', 'CSS'],
       image:
-        'https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg?auto=compress&cs=tinysrgb&w=800',
+        'https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=800',
       github: '#',
       live: '#',
       featured: true,
@@ -34,7 +34,7 @@ const Projects = () => {
         'An AI-powered learning assistant designed to support students with real-time responses, personalized recommendations, and study materials using generative AI models.',
       technologies: ['React', 'OpenAI API', 'Node.js', 'Tailwind CSS'],
       image:
-        'https://images.pexels.com/photos/4145190/pexels-photo-4145190.jpeg?auto=compress&cs=tinysrgb&w=800',
+        'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800',
       github: '#',
       live: '#',
       featured: false,
