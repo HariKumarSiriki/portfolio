@@ -11,7 +11,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <div className="text-2xl font-bold">
-              <span className="text-teal-400">Hari Kumar</span>Siriki
+              <span className="text-teal-400">Hari Kumar </span>Siriki
             </div>
             <p className="text-gray-400">
               Aspiring Software Developer passionate about creating innovative solutions 
