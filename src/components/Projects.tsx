@@ -10,7 +10,7 @@ const Projects = () => {
         'A job portal system developed using Spring Boot for backend and Angular for frontend. Features include job posting, applicant tracking, and advanced search functionalities.',
       technologies: ['Spring Boot', 'Angular', 'MySQL', 'REST API'],
       image:
-        'https://images.pexels.com/photos/7112/startup-photos.jpg?auto=compress&cs=tinysrgb&w=800',
+        'https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=800',
       github: '#',
       live: '#',
       featured: true,
@@ -26,19 +26,7 @@ const Projects = () => {
       github: '#',
       live: '#',
       featured: true,
-    },
-    {
-      id: 3,
-      title: 'Gen AI Tutor',
-      description:
-        'An AI-powered learning assistant designed to support students with real-time responses, personalized recommendations, and study materials using generative AI models.',
-      technologies: ['React', 'OpenAI API', 'Node.js', 'Tailwind CSS'],
-      image:
-        'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800',
-      github: '#',
-      live: '#',
-      featured: false,
-    },
+    }
   ];
 
   const getTechIcon = (tech: string) => {
@@ -89,42 +77,3 @@ const Projects = () => {
                 </p>
 
                 {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="flex items-center gap-1 bg-teal-50 text-teal-700 px-3 py-1 rounded-full text-sm font-medium"
-                    >
-                      {getTechIcon(tech)}
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Project Links */}
-                <div className="flex gap-4">
-                  <a
-                    href={project.github}
-                    className="flex items-center gap-2 text-gray-600 hover:text-navy-800 transition-colors"
-                  >
-                    <Github size={18} />
-                    <span className="text-sm font-medium">Code</span>
-                  </a>
-                  <a
-                    href={project.live}
-                    className="flex items-center gap-2 text-gray-600 hover:text-teal-600 transition-colors"
-                  >
-                    <ExternalLink size={18} />
-                    <span className="text-sm font-medium">Live Demo</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default Projects;
