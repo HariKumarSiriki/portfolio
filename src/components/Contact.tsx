@@ -9,7 +9,7 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
-  const [errors, setErrors] = useState<{[key: string]: string}>({});
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -17,7 +17,6 @@ const Contact = () => {
       ...prev,
       [name]: value
     }));
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors(prev => ({
         ...prev,
@@ -27,44 +26,62 @@ const Contact = () => {
   };
 
   const validateForm = () => {
-    const newErrors: {[key: string]: string} = {};
-    
+    const newErrors: { [key: string]: string } = {};
+
     if (!formData.name.trim()) {
       newErrors.name = 'Name is required';
     }
-    
+
     if (!formData.email.trim()) {
       newErrors.email = 'Email is required';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = 'Please enter a valid email address';
     }
-    
+
     if (!formData.message.trim()) {
       newErrors.message = 'Message is required';
     } else if (formData.message.trim().length < 10) {
       newErrors.message = 'Message must be at least 10 characters long';
     }
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) return;
-    
+
     setIsSubmitting(true);
-    
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    setIsSubmitting(false);
-    setShowSuccess(true);
-    setFormData({ name: '', email: '', message: '' });
-    
-    // Hide success message after 5 seconds
-    setTimeout(() => setShowSuccess(false), 5000);
+
+    try {
+      const response = await fetch("https://formspree.io/f/xovlqeob", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message
+        })
+      });
+
+      if (response.ok) {
+        setShowSuccess(true);
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setShowSuccess(false), 5000);
+      } else {
+        alert("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Something went wrong!");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -81,44 +98,42 @@ const Contact = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <div className="space-y-8">
-            <div className="animate-fade-in-left">
-              <h3 className="text-2xl font-bold text-navy-800 mb-6">Let's Connect</h3>
-              <p className="text-gray-600 mb-8">
-                Feel free to reach out if you have any questions, want to discuss a project, 
-                or just want to say hello. I'll get back to you as soon as possible!
-              </p>
-              
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="bg-teal-100 p-3 rounded-full">
-                    <Mail className="w-6 h-6 text-teal-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-navy-800">Email</h4>
-                    <p className="text-gray-600">hkumarsiriki@gmail.com</p>
-                  </div>
+          {/* Contact Info */}
+          <div className="space-y-8 animate-fade-in-left">
+            <h3 className="text-2xl font-bold text-navy-800 mb-6">Let's Connect</h3>
+            <p className="text-gray-600 mb-8">
+              Feel free to reach out if you have any questions, want to discuss a project, 
+              or just want to say hello. I'll get back to you as soon as possible!
+            </p>
+
+            <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <div className="bg-teal-100 p-3 rounded-full">
+                  <Mail className="w-6 h-6 text-teal-600" />
                 </div>
-                
-                <div className="flex items-center gap-4">
-                  <div className="bg-teal-100 p-3 rounded-full">
-                    <Phone className="w-6 h-6 text-teal-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-navy-800">Phone</h4>
-                    <p className="text-gray-600">+91 70757 54191</p>
-                  </div>
+                <div>
+                  <h4 className="font-semibold text-navy-800">Email</h4>
+                  <p className="text-gray-600">hkumarsiriki@gmail.com</p>
                 </div>
-                
-                <div className="flex items-center gap-4">
-                  <div className="bg-teal-100 p-3 rounded-full">
-                    <MapPin className="w-6 h-6 text-teal-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-navy-800">Location</h4>
-                    <p className="text-gray-600">Visakhapatnam, Andhra Pradesh.</p>
-                  </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="bg-teal-100 p-3 rounded-full">
+                  <Phone className="w-6 h-6 text-teal-600" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-navy-800">Phone</h4>
+                  <p className="text-gray-600">+91 70757 54191</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="bg-teal-100 p-3 rounded-full">
+                  <MapPin className="w-6 h-6 text-teal-600" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-navy-800">Location</h4>
+                  <p className="text-gray-600">Visakhapatnam, Andhra Pradesh</p>
                 </div>
               </div>
             </div>
@@ -138,7 +153,7 @@ const Contact = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-200 ${
+                    className={`w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 ${
                       errors.name ? 'border-red-500' : ''
                     }`}
                     placeholder="Your full name"
@@ -156,7 +171,7 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-200 ${
+                    className={`w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 ${
                       errors.email ? 'border-red-500' : ''
                     }`}
                     placeholder="your.email@example.com"
@@ -174,7 +189,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={6}
-                    className={`w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-200 resize-none ${
+                    className={`w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 resize-none ${
                       errors.message ? 'border-red-500' : ''
                     }`}
                     placeholder="Tell me about your project or just say hello..."
@@ -185,7 +200,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-2"
+                  className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 disabled:opacity-50 flex items-center justify-center gap-2"
                 >
                   {isSubmitting ? (
                     <>
