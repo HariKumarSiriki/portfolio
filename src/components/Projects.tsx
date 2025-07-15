@@ -8,7 +8,7 @@ const Projects = () => {
       title: 'Job Portal Application',
       description:
         'A job portal system developed using Spring Boot for backend and Angular for frontend. Features include job posting, applicant tracking, and advanced search functionalities.',
-      technologies: ['Spring Boot', 'Angular', 'MySQL', 'REST API'],
+      technologies: ['Java', 'Spring Boot', 'Angular', 'MySQL', 'REST API'],
       image:
         'https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=800',
       github: '#',
@@ -77,3 +77,25 @@ const Projects = () => {
                 </p>
 
                 {/* Technologies */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="flex items-center gap-1 bg-teal-50 text-teal-700 px-3 py-1 rounded-full text-sm font-medium"
+                    >
+                      {getTechIcon(tech)}
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Projects;
