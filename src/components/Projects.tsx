@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Github, Code, Database, Globe } from 'lucide-react';
+import { Code, Database, Globe } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
@@ -8,11 +8,9 @@ const Projects = () => {
       title: 'Job Portal Application',
       description:
         'A job portal system developed using Spring Boot for backend and Angular for frontend. Features include job posting, applicant tracking, and advanced search functionalities.',
-      technologies: ['Java', 'Spring Boot', 'Angular', 'MySQL', 'REST API'],
+      technologies: ['Spring Boot', 'Angular', 'MySQL', 'REST API'],
       image:
         'https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=800',
-      github: '#',
-      live: '#',
       featured: true,
     },
     {
@@ -23,8 +21,6 @@ const Projects = () => {
       technologies: ['Java', 'Spring Boot', 'MySQL', 'HTML', 'CSS'],
       image:
         'https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=800',
-      github: '#',
-      live: '#',
       featured: true,
     }
   ];
@@ -77,7 +73,7 @@ const Projects = () => {
                 </p>
 
                 {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
@@ -87,7 +83,6 @@ const Projects = () => {
                       {tech}
                     </span>
                   ))}
-                </div>
                 </div>
               </div>
             </div>
