@@ -11,7 +11,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <div className="text-2xl font-bold">
-              <span className="text-teal-400">Alex</span>Johnson
+              <span className="text-teal-400">Hari Kumar</span>Siriki
             </div>
             <p className="text-gray-400">
               Aspiring Software Developer passionate about creating innovative solutions 
@@ -45,7 +45,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-teal-400">Connect With Me</h3>
             <div className="flex space-x-4">
               <a
-                href="https://github.com"
+                href="https://github.com/HariKumarSiriki"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gray-800 hover:bg-teal-600 p-3 rounded-full transition-all duration-200 transform hover:scale-110"
@@ -53,7 +53,7 @@ const Footer = () => {
                 <Github size={20} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/harikumarsiriki/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gray-800 hover:bg-teal-600 p-3 rounded-full transition-all duration-200 transform hover:scale-110"
@@ -61,7 +61,7 @@ const Footer = () => {
                 <Linkedin size={20} />
               </a>
               <a
-                href="mailto:alex.johnson@email.com"
+                href="mailto:hkumarsiriki@email.com"
                 className="bg-gray-800 hover:bg-teal-600 p-3 rounded-full transition-all duration-200 transform hover:scale-110"
               >
                 <Mail size={20} />
@@ -76,7 +76,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400 flex items-center justify-center gap-2">
-            © {currentYear} Alex Johnson. Made with <Heart size={16} className="text-red-500" /> and lots of coffee.
+            © {currentYear} Hari Kumar . Made with <Heart size={16} className="text-red-500" /> and lots of coffee.
           </p>
         </div>
       </div>
