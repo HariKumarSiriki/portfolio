@@ -21,7 +21,7 @@ const Hero = () => {
       <div className="relative z-10 text-center text-white px-6">
         <div className="animate-fade-in-up">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Alex <span className="text-teal-400">Johnson</span>
+            Hari Kumar <span className="text-teal-400">Siriki</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-300 max-w-2xl mx-auto">
             Aspiring Software Developer
