@@ -8,7 +8,7 @@ const About = () => {
     { name: 'SQL', icon: <Database className="w-5 h-5" />, level: 80 },
     { name: 'Spring Boot', icon: <Server className="w-5 h-5" />, level: 75 },
     { name: 'JavaScript', icon: <Zap className="w-5 h-5" />, level: 85 },
-    { name: 'React', icon: <BookOpen className="w-5 h-5" />, level: 80 },
+    { name: 'Angular', icon: <BookOpen className="w-5 h-5" />, level: 80 },
   ];
 
   return (
