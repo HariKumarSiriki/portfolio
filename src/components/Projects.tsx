@@ -8,7 +8,7 @@ const Projects = () => {
       title: 'Job Portal Application',
       description:
         'A job portal system developed using Spring Boot for backend and Angular for frontend. Features include job posting, applicant tracking, and advanced search functionalities.',
-      technologies: ['Spring Boot', 'Angular', 'MySQL', 'REST API'],
+      technologies: ['Java', 'Spring Boot', 'Angular', 'MySQL', 'REST API'],
       image:
         'https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=800',
       featured: true,
@@ -22,6 +22,16 @@ const Projects = () => {
       image:
         'https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=800',
       featured: true,
+    },
+    {
+      id: 3,
+      title: 'Student Management System',
+      description:
+        'A CRUD-based web application to manage student records, including registration, course enrollment, and performance tracking. Built using Spring Boot and Thymeleaf.',
+        technologies: ['Java', 'Spring Boot', 'MySQL', 'HTML', 'CSS'],
+      image:
+        'https://images.pexels.com/photos/5212333/pexels-photo-5212333.jpeg?auto=compress&cs=tinysrgb&w=800',
+      featured: false,
     }
   ];
 
@@ -79,7 +89,7 @@ const Projects = () => {
                       key={tech}
                       className="flex items-center gap-1 bg-teal-50 text-teal-700 px-3 py-1 rounded-full text-sm font-medium"
                     >
-                      {getTechIcon(tech)}
+                     {getTechIcon(tech)}
                       {tech}
                     </span>
                   ))}
