@@ -5,34 +5,40 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution built with Spring Boot and React. Features include user authentication, product catalog, shopping cart, and secure payment processing.',
-      technologies: ['Spring Boot', 'React', 'MySQL', 'JWT', 'Stripe API'],
-      image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
+      title: 'Job Portal Application',
+      description:
+        'A job portal system developed using Spring Boot for backend and Angular for frontend. Features include job posting, applicant tracking, and advanced search functionalities.',
+      technologies: ['Spring Boot', 'Angular', 'MySQL', 'REST API'],
+      image:
+        'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800',
       github: '#',
       live: '#',
-      featured: true
+      featured: true,
     },
     {
       id: 2,
-      title: 'Task Management Dashboard',
-      description: 'An intuitive project management tool with real-time collaboration features. Built with modern web technologies and responsive design principles.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Socket.io', 'Tailwind CSS'],
-      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
+      title: 'Travel Management System',
+      description:
+        'A complete travel booking and management platform. It handles customer details, travel packages, payment integration, and booking records efficiently.',
+      technologies: ['Java', 'Spring Boot', 'MySQL', 'HTML', 'CSS'],
+      image:
+        'https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg?auto=compress&cs=tinysrgb&w=800',
       github: '#',
       live: '#',
-      featured: true
+      featured: true,
     },
     {
       id: 3,
-      title: 'Weather Analytics App',
-      description: 'A comprehensive weather tracking application with data visualization and forecasting. Integrates multiple weather APIs for accurate predictions.',
-      technologies: ['Java', 'Spring Boot', 'Chart.js', 'Weather API', 'PostgreSQL'],
-      image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800',
+      title: 'Gen AI Tutor',
+      description:
+        'An AI-powered learning assistant designed to support students with real-time responses, personalized recommendations, and study materials using generative AI models.',
+      technologies: ['React', 'OpenAI API', 'Node.js', 'Tailwind CSS'],
+      image:
+        'https://images.pexels.com/photos/4145190/pexels-photo-4145190.jpeg?auto=compress&cs=tinysrgb&w=800',
       github: '#',
       live: '#',
-      featured: false
-    }
+      featured: false,
+    },
   ];
 
   const getTechIcon = (tech: string) => {
@@ -49,7 +55,7 @@ const Projects = () => {
             My <span className="text-teal-600">Projects</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Here are some of the projects I've worked on, showcasing my skills in 
+            Here are some of the projects I've worked on, showcasing my skills in
             full-stack development and problem-solving.
           </p>
         </div>
