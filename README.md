@@ -26,7 +26,7 @@ Each project includes a short description and an image.
 ## How to Use
 
 To Clone the repository:
-git clone https://github.com/your-username/portfolio.git
+git clone https://github.com/HariKumarSiriki/portfolio
 
 ## License
 
